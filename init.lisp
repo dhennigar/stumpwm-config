@@ -24,10 +24,12 @@
 ;; -----------------------------------------------------------------------------
 ;; applications
 
-(defcommand dh/chrome ()()
-  (run-or-raise "dh-chrome-launcher" '(:class "Google-chrome")))
+(defcommand chrome ()()
+  (run-or-raise "flatpak run --file-forwarding com.google.Chrome" '(:class "Google-chrome")))
+(define-key *root-map* (kbd "b") "chrome")
 
-(define-key *root-map* (kbd "b") "dh/chrome")
+(define-key *top-map* (kbd "M-Tab") "next")
+(define-key *top-map* (kbd "M-S-Tab") "prev")
 
 ;; -----------------------------------------------------------------------------
 ;; mode line
