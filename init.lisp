@@ -77,18 +77,23 @@
 
 ;; Default groups
 (when *initializing*
-  (grename "Group1")
-  (gnew "Group2")
-  (gnew "Group3")
-  (gselect "Group1"))
+  (grename "Group 1")
+  (gnew "Group 2")
+  (gnew "Group 3")
+  (gselect "Group 1"))
 
 
 ;; -----------------------------------------------------------------------------
 ;; Swank
 
-;; Start a server to communicate with Emacs
 (require 'swank)
-(swank:create-server :port 4004)
+
+(defcommand swank ()()
+	"Start a swank server."
+	(message "Swank server started on port 4004")
+	(swank:create-server :port 4004))
+
+(define-key *root-map* (kbd "C-s") "swank")
 
 
 ;;; init.lisp ends here
