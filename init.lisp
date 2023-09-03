@@ -11,10 +11,11 @@
 ;; -----------------------------------------------------------------------------
 ;; X initialization
 
+(run-shell-command "autorandr --force")
 (run-shell-command "xsetroot -cursor_name left_ptr")
 (run-shell-command "xrdb -merge .Xresources")
 (run-shell-command "xset s 600")
-(run-shell-command "xss-lock slock")
+(run-shell-command "xss-lock slock &")
 
 
 ;; -----------------------------------------------------------------------------
